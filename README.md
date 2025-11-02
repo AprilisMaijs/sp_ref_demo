@@ -110,7 +110,7 @@ Breaker states seen:
 
 ---
 
-## 4. Tweak knobs (for live demos)
+## 3. Tweak knobs (for live demos)
 
 You can tune behavior **without changing code**, using env vars.
 
@@ -131,7 +131,7 @@ MAX_LATENCY_MS: "1500"
 - `FAILURE_THRESHOLD`: how many consecutive failures until breaker opens.
 - `COOL_DOWN_SECONDS`: how long the breaker stays open before trying again.
 
-## 6. Repo layout
+## 4. Repo layout
 
 ```text
 tiny-resilient-service/
@@ -150,3 +150,4 @@ tiny-resilient-service/
 ```
 
 ---
+
