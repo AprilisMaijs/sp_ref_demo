@@ -1,0 +1,30 @@
+
+version: "3.9"
+
+services:
+  service-b:
+    build:
+      context: .
+      dockerfile: service_b.Dockerfile
+    environment:
+      FAILURE_RATE: "0"
+      #MAX_LATENCY_MS: "800" 
+      BASE_LATENCY_MS: "30"
+    ports:
+      - "8001:8001"
+
+  service-a:
+    build:
+      context: .
+      dockerfile: service_a.Dockerfile
+    environment:
+      SERVICE_B_URL: "http://service-b:8001"
+      REQUEST_TIMEOUT_S: "0.5"
+      MAX_RETRIES: "2"
+      FAILURE_THRESHOLD: "5"
+      COOL_DOWN_SECONDS: "5.0"
+    depends_on:
+      - service-b
+    ports:
+      - "8000:8000"
+
