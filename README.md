@@ -1,7 +1,7 @@
 
 # tiny-resilient-service
 
-A minimal 2-service demo you on scalability, reliability and resilience and the trade-offs between them.
+A minimal 2-service demo on scalability, reliability and resilience and the trade-offs between them.
 
 ### TL;DR
 - `service-a` = client / gateway
