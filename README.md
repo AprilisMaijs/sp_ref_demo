@@ -110,7 +110,7 @@ Breaker states seen:
 
 ---
 
-## 3. Tweak knobs (for live demos)
+## 3. Tweak reliability
 
 You can tune behavior **without changing code**, using env vars.
 
@@ -119,7 +119,7 @@ You can tune behavior **without changing code**, using env vars.
 - `MAX_LATENCY_MS`: `"800"` upper bound for extra delay.
 - `BASE_LATENCY_MS`: `"30"` base cost per request.
 
-To make it evil:
+To make it unreliable:
 ```yaml
 FAILURE_RATE: "0.6"
 MAX_LATENCY_MS: "1500"
