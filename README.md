@@ -1,7 +1,7 @@
 
 # tiny-resilient-service
 
-A minimal 2-service demo you on scalability, reliability and resilience and the trade-offs between them.
+A minimal 2-service demo on scalability, reliability and resilience and the trade-offs between them.
 
 ### TL;DR
 - `service-a` = client / gateway
@@ -110,7 +110,7 @@ Breaker states seen:
 
 ---
 
-## 3. Tweak knobs (for live demos)
+## 3. Tweak reliability
 
 You can tune behavior **without changing code**, using env vars.
 
@@ -119,7 +119,7 @@ You can tune behavior **without changing code**, using env vars.
 - `MAX_LATENCY_MS`: `"800"` upper bound for extra delay.
 - `BASE_LATENCY_MS`: `"30"` base cost per request.
 
-To make it evil:
+To make it unreliable:
 ```yaml
 FAILURE_RATE: "0.6"
 MAX_LATENCY_MS: "1500"
@@ -130,24 +130,3 @@ MAX_LATENCY_MS: "1500"
 - `MAX_RETRIES`: how many times we'll retry (2 means 1 original + 2 retries).
 - `FAILURE_THRESHOLD`: how many consecutive failures until breaker opens.
 - `COOL_DOWN_SECONDS`: how long the breaker stays open before trying again.
-
-## 4. Repo layout
-
-```text
-tiny-resilient-service/
-├── docker-compose.yml
-├── service_a.Dockerfile
-├── service_b.Dockerfile
-├── loadtest.py
-├── README.md
-├── service_a/
-│   ├── main.py
-│   ├── resilience.py
-│   └── requirements.txt
-└── service_b/
-    ├── main.py
-    └── requirements.txt
-```
-
----
-
